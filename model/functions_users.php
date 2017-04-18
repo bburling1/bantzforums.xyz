@@ -3,9 +3,9 @@
 function count_username($username)
 {
   global $conn;
-  $sql = 'SELECT * FROM users WHERE user_name = :user_name';
+  $sql = 'SELECT * FROM users WHERE username = :username';
   $statement = $conn->prepare($sql);
-  $statement->bindValue(':user_name', $user_name);
+  $statement->bindValue(':username', $username);
   $statement->execute();
   $result = $statement->fetchAll();
   $statement->closeCursor();
@@ -13,12 +13,12 @@ function count_username($username)
   return $count;
 }
 
-function add_user($user_name, $email, $password, $salt)
+function add_user($username, $email, $password, $salt)
 {
  global $conn;
- $sql = "INSERT INTO users (user_name, email, password, salt) VALUES (:user_name, :email, :password, :salt)";
+ $sql = "INSERT INTO users (username, email, password, salt, acc_type) VALUES (:username, :email, :password, :salt, :acc_type)";
  $statement = $conn->prepare($sql);
- $statement->bindValue(':user_name', $user_name);
+ $statement->bindValue(':username', $username);
  $statement->bindValue(':email', $email);
  $statement->bindValue(':password', $password);
  $statement->bindValue(':salt', $salt);

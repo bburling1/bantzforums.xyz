@@ -9,9 +9,9 @@
 
 <?php
 	//retrieve the registration details into the form
-	$user_name = $_POST['uname'];
+	$username = $_POST['username'];
 	$email = $_POST['email'];
-	$password = $_POST['pass'];
+	$password = $_POST['password'];
 
 	//START SERVER-SIDE VALIDATION
 	//check if the password is a minimum of 8 characters long
@@ -24,7 +24,7 @@
 		exit();
 	}
 	//check if all required fields have data
-	elseif (empty($user_name) || empty($email) || empty($password))
+	elseif (empty($username) || empty($email) || empty($password))
 	{
 		//if required form fields are blank intialise a session called 'error' with an appropriate user message
 		$_SESSION['error'] = 'All * fields are required.';
@@ -43,7 +43,7 @@
 	}
 
 	//call the count_username() function
-	$count = count_username($user_name);
+	$count = count_username($username);
 
 	if($count > 0)
 	{
@@ -62,7 +62,7 @@
 	$password = hash('sha256', $password.$salt); //generate the hashed password with the salt value
 
 	//call the add_user() function
-	$result = add_user($user_name, $email, $password, $salt);
+	$result = add_user($username, $email, $password, $salt);
 
 	//create user messages
 	if($result)
