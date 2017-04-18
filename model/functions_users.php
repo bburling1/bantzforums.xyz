@@ -18,7 +18,7 @@ function add_user($user_name, $email, $password, $salt)
  global $conn;
  $sql = "INSERT INTO users (user_name, email, password, salt) VALUES (:user_name, :email, :password, :salt)";
  $statement = $conn->prepare($sql);
- $statement->bindValue(':username', $username);
+ $statement->bindValue(':user_name', $user_name);
  $statement->bindValue(':email', $email);
  $statement->bindValue(':password', $password);
  $statement->bindValue(':salt', $salt);
