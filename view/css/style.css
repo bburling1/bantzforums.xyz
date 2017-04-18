@@ -3,6 +3,7 @@
     margin: 0;
     border: 0;
     padding: 0;
+    font-family: OpenSans;
 }
 /* Testing */
 #testcontent{
@@ -11,7 +12,7 @@
 }
 
 /* Header + Navigation */
-#headerbuffer{
+/* #headerbuffer{
     height: 50px;
     width: 100%;
 }

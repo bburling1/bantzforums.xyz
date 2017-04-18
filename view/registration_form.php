@@ -7,7 +7,7 @@ require('../model/database.php');
 include "header.php"
 ?>
 
-<div id="content">
+<div class="content">
   <?php
     //user messages
     if(isset($_SESSION['error'])) //if session error is set
