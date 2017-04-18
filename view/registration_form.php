@@ -6,7 +6,17 @@ include "header.php"
 ?>
 
 <div id="content">
-  <form class="register" action="">
+  <?php
+    //user messages
+    if(isset($_SESSION['error'])) //if session error is set
+    {
+      echo '<div class="error">';
+      echo '<p>' . $_SESSION['error'] . '</p>'; //display error message
+      echo '</div>';
+      unset($_SESSION['error']); //unset session error
+    }
+  ?>
+  <form class="register" action="../controller/registration_process.php" method="post">
       <h2 class="form-title">Register to League of Forums</h2>
       <div class="form-input">
           <label><b>Username*</b></label>
