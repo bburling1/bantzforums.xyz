@@ -13,7 +13,7 @@ function count_username($username)
   return $count;
 }
 
-function add_user($firstName, $lastName, $email, $username, $password, $salt)
+function add_user($user_name, $email, $password, $salt)
 {
  global $conn;
  $sql = "INSERT INTO user (user_name, email, password, salt) VALUES (:user_name, :email, :password, :salt)";
