@@ -70,7 +70,7 @@
 		//if product is successfully added, create a success message to display on the products page
 		$_SESSION['success'] = 'Thank you for creating an account. Please login.';
 		//redirect to products.php
-		header('location:../view/login_form.php');
+		header('location:../index.php');
 	}
 	else
 	{
