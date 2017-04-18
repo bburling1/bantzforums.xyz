@@ -9,14 +9,14 @@
     <link rel="stylesheet" type="text/css" href="fonts/font-awesome.min.css">
     <link rel="stylesheet" type="text/css" href="fonts/font.css">
     <!-- link to CSS -->
-    <!-- <link rel="stylesheet" type="text/css" href="css/style.css"> -->
+    <link rel="stylesheet" type="text/css" href="css/style.css">
     <!-- link to javascript -->
     <script src="js/script.js"></script>
 </head>
 
 <body>
-<!-- <?php //include "login_form.php" ?> -->
-  <nav class="nav">
+<?php include "login_form.php" ?>
+  <nav class="nav has-shadow">
     <div class="nav-left">
       <h1 class="nav-item title">League of Forums</h1>
     </div>
@@ -27,7 +27,7 @@
       <a class="nav-item">
         Profile
       </a>
-      <a class="nav-item">
+      <a onClick="showloginmodal()" class="nav-item">
         Login
       </a>
     </div>

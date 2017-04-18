@@ -7,7 +7,7 @@ require('../model/database.php');
 include "header.php"
 ?>
 
-<div class="content">
+<section class="section">
   <?php
     //user messages
     if(isset($_SESSION['error'])) //if session error is set
@@ -18,20 +18,42 @@ include "header.php"
       unset($_SESSION['error']); //unset session error
     }
   ?>
-  <form class="register" action="../controller/registration_process.php" method="post">
-      <h2 class="form-title">Register to League of Forums</h2>
-      <label><b>Username*</b></label>
-      <input type="text" placeholder="Enter Username" name="username" required>
-      <label><b>Email*</b></label>
-      <input type="email" placeholder="Enter Email" name="email" required>
-      <label><b>Password*</b></label>
-      <input type="password" placeholder="Enter Password" name="password" required>
-      <label><b>Confirm Password*</b></label>
-      <input type="password" placeholder="Confirm your Password" name="pass_confirm" required>
-      <p>Have an account? <a onclick="showmodal()">Login</a> here!</p>
-      <button class="form-submit" type="submit">Register</button>
+<div class="container content">
+  <form class="form register" action="../controller/registration_process.php" method="post">
+    <h2 class="form-title">Register to League of Forums</h2>
+    <div class="field">
+      <label class="label"><b>Username*</b></label>
+      <p class="control">
+        <input class="input is-medium" type="text" placeholder="Enter Username" name="username" required>
+      </p>
+    </div>
+    <div class="field">
+      <label class="label"><b>Email*</b></label>
+      <p class="control">
+        <input class="input is-medium" type="email" placeholder="Enter Email" name="email" required>
+      </p>
+    </div>
+    <div class="field">
+      <label class="label"><b>Password*</b></label>
+      <p class="control">
+        <input class="input is-medium" type="password" placeholder="Enter Password" name="password" required>
+      </p>
+    </div>
+    <div class="field">
+      <label class="label"><b>Confirm Password*</b></label>
+      <p class="control">
+        <input class="input is-medium" type="password" placeholder="Confirm your Password" name="pass_confirm" required>
+      </p>
+    </div>
+    <p>Have an account? <a onclick="showmodal()">Login</a> here!</p>
+    <div class="field">
+      <p class="control">
+        <button class="button is-primary" type="submit">Register</button>
+      </p>
+    </div>
   </form>
 </div>
+</section>
 
 <?php
 include "footer.php"

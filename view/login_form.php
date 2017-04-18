@@ -1,20 +1,34 @@
-<!-- The Modal -->
-<div id="modal">
-
-  <!-- Modal content -->
-  <div class="form modal-content">
-    <span onclick="closemodal()" id="close">&times;</span>
-    <form class="login" action="">
-        <h2 class="form-title">Log-in to League of Forums</h2>
-        <div class="form-input">
-            <label><b>Username</b></label>
-            <input type="text" placeholder="Enter Username" name="uname" required>
-            <label><b>Password</b></label>
-            <input type="password" placeholder="Enter Password" name="pass" required>
-            <p>Don't have an account? <a href="registration_form.php">Register</a> here!</p>
-            <button class="form-submit" type="submit">Login</button>
+<div id="loginmodal" class="modal">
+  <div onClick="closemodal()" class="modal-background"></div>
+  <div class="modal-card">
+    <header class="modal-card-head">
+      <p class="modal-card-title">Login to League of Forums</p>
+      <button onClick="closemodal()" class="delete"></button>
+    </header>
+    <section class="modal-card-body">
+      <form class="form login">
+        <div class="field">
+          <label class="label"><b>Username</b></label>
+          <p class="control">
+            <input class="input is-medium" type="text" placeholder="Username" name="username" required>
+          </p>
         </div>
-    </form>
+        <div class="field">
+          <label class="label"><b>Password</b></label>
+          <p class="control">
+            <input class="input is-medium" type="password" placeholder="Password" name="password" required>
+          </p>
+        </div>
+        <p>Don't have an account? <a href="registration_form.php">Register</a> here!</p>
+        <div class="field is-grouped">
+          <p class="control">
+            <button class="button is-primary" type="submit">Login</button>
+          </p>
+          <a onClick="closemodal()" class="button">Cancel</a>
+        </div>
+      </form>
+    </section>
+    <footer class="modal-card-foot">
+    </footer>
   </div>
-
 </div>

@@ -1,18 +1,13 @@
-
 // Open the modal
-function showmodal() {
-    document.getElementById('modal').style.display = 'block';
+function showloginmodal() {
+  var x = document.getElementById('loginmodal');
+  x.className = "modal is-active";
+  console.log('Modal Opened');
 }
 
-// Close the modal
+// Close the modal from x
 function closemodal() {
-    document.getElementById('modal').style.display = 'none';
-}
-
-// Close the modal when clicked outside the modal
-window.onclick = function(event) {
-    var modal = document.getElementById('modal');
-    if (event.target == modal) {
-        modal.style.display = "none";
-    }
+  var x = document.getElementById('loginmodal');
+  x.className = 'modal';
+  console.log('Modal Closed');
 }
