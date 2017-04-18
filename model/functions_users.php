@@ -16,7 +16,7 @@ function count_username($username)
 function add_user($user_name, $email, $password, $salt)
 {
  global $conn;
- $sql = "INSERT INTO user (user_name, email, password, salt) VALUES (:user_name, :email, :password, :salt)";
+ $sql = "INSERT INTO users (user_name, email, password, salt) VALUES (:user_name, :email, :password, :salt)";
  $statement = $conn->prepare($sql);
  $statement->bindValue(':username', $username);
  $statement->bindValue(':email', $email);
@@ -26,4 +26,4 @@ function add_user($user_name, $email, $password, $salt)
  $statement->closeCursor();
  return $result;
 }
- ?>
+?>
