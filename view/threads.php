@@ -1,4 +1,6 @@
 <?php
+//start session management
+session_start();
 //connect to the database
 require('../model/database.php');
 require('../model/functions_categories.php');
@@ -31,6 +33,6 @@ include "header.php"
     </div>
 </div>
 
-<?php 
+<?php
 include "footer.php"
 ?>
