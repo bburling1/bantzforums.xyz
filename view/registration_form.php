@@ -24,28 +24,28 @@ include "header.php"
     <div class="field">
       <label class="label"><b>Username*</b></label>
       <p class="control">
-        <input class="input is-medium" type="text" placeholder="Enter Username" name="username" required>
+        <input class="input" type="text" placeholder="Enter Username" name="username" required>
       </p>
     </div>
     <div class="field">
       <label class="label"><b>Email*</b></label>
       <p class="control">
-        <input class="input is-medium" type="email" placeholder="Enter Email" name="email" required>
+        <input class="input" type="email" placeholder="Enter Email" name="email" required>
       </p>
     </div>
     <div class="field">
       <label class="label"><b>Password*</b></label>
       <p class="control">
-        <input class="input is-medium" type="password" placeholder="Enter Password" name="password" required>
+        <input class="input" type="password" placeholder="Enter Password" name="password" required>
       </p>
     </div>
     <div class="field">
       <label class="label"><b>Confirm Password*</b></label>
       <p class="control">
-        <input class="input is-medium" type="password" placeholder="Confirm your Password" name="pass_confirm" required>
+        <input class="input" type="password" placeholder="Confirm your Password" name="pass_confirm" required>
       </p>
     </div>
-    <p>Have an account? <a onclick="showmodal()">Login</a> here!</p>
+    <p>Have an account? <a onclick="showloginmodal()">Login</a> here!</p>
     <div class="field">
       <p class="control">
         <button class="button is-primary" type="submit">Register</button>
