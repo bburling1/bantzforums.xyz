@@ -4,6 +4,8 @@ session_start();
 //connect to the database
 require('../model/database.php');
 
+$title = "Registration";
+
 include "header.php"
 ?>
 
