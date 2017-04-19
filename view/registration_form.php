@@ -4,7 +4,7 @@ session_start();
 //connect to the database
 require('../model/database.php');
 
-$title = "Registration";
+$title = "Registration Brock";
 
 include "header.php"
 ?>
