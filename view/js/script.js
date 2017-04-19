@@ -11,3 +11,19 @@ function closemodal() {
   x.className = 'modal';
   console.log('Modal Closed');
 }
+
+
+// Confirmation of Password in Registration Form
+function confirm_password() {
+  var notification = document.getElementById("registernotification");
+  var password = document.getElementById("password");
+  var password_confirm = document.getElementById("password_confirm");
+  var ok = true;
+  if (password != password_confirm){
+    notification.innerHTML = "Passwords do not match";
+    password.className = "input is-danger";
+    password_confirm.className = "input is-danger";
+    ok = false;
+  }
+  return ok;
+}
