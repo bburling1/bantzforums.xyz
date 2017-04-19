@@ -1,8 +1,3 @@
-<?php
-//start session management
-session_start();
- ?>
-
 <div id="loginmodal" class="modal">
   <div onClick="closemodal()" class="modal-background"></div>
   <div class="modal-card">

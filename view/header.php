@@ -17,18 +17,20 @@
 <body>
 <?php include "login_form.php" ?>
   <nav class="nav has-shadow">
-    <div class="nav-left">
-      <h1 class="nav-item title">League of Forums</h1>
-    </div>
-    <div class="nav-right nav-menu">
-      <a class="nav-item">
-        Home
-      </a>
-      <a class="nav-item">
-        Profile
-      </a>
-      <a onClick="showloginmodal()" class="nav-item">
-        Login
-      </a>
+    <div class="container">
+        <div class="nav-left">
+        <h1 id="title" class="nav-item title is-1">League of Forums</h1>
+      </div>
+      <div class="nav-right nav-menu">
+        <a class="nav-item">
+          Home
+        </a>
+        <a class="nav-item">
+          Profile
+        </a>
+        <a onClick="showloginmodal()" class="nav-item">
+          Login
+        </a>
+      </div>
     </div>
   </nav>
