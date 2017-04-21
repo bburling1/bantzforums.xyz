@@ -26,4 +26,18 @@ function add_user($username, $email, $password, $salt)
  $statement->closeCursor();
  return $result;
 }
+
+function get_username_by_user_id($user_id)
+{
+  global $conn;
+  $sql = "SELECT username FROM users WHERE user_id = :user_id";
+  $statement = $conn->prepare($sql);
+  $statement->bindValue(':user_id', $user_id);
+  $statement->execute();
+  //use the fetch() method to retrieve a single row
+  $username = $statement->fetch();
+  $statement->closeCursor();
+  return $username;
+}
+
 ?>
