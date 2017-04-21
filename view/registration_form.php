@@ -3,6 +3,7 @@
 session_start();
 //connect to the database
 require('../model/database.php');
+require('../model/functions_messages.php');
 
 $title = "Registration";
 
@@ -10,19 +11,14 @@ include "header.php"
 ?>
 
 <section class="section">
-  <?php
-    //user messages
-    if(isset($_SESSION['error'])) //if session error is set
-    {
-      echo '<div class="error">';
-      echo '<p>' . $_SESSION['error'] . '</p>'; //display error message
-      echo '</div>';
-      unset($_SESSION['error']); //unset session error
-    }
-  ?>
+
 <div class="container content">
   <form class="form register" onsubmit="return confirm_password()" action="../controller/registration_process.php" method="post">
     <h2 class="form-title">Register to League of Forums</h2>
+    <?php
+      //user messages
+      $message = user_message();
+    ?>
     <div class="field">
       <label class="label"><b>Username*</b></label>
       <p class="control">

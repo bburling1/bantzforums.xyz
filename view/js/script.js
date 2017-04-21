@@ -19,11 +19,16 @@ function confirm_password() {
   var password = document.getElementById("password");
   var password_confirm = document.getElementById("password_confirm");
   var ok = true;
-  if (password != password_confirm){
+  if (password.value != password_confirm.value){
     notification.innerHTML = "Passwords do not match";
     password.className = "input is-danger";
     password_confirm.className = "input is-danger";
     ok = false;
+    console.log(password);
+    console.log(password_confirm);
+  } else {
+    console.log(password);
+    ok = true;
   }
   return ok;
 }
