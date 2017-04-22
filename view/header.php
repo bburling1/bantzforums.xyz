@@ -2,7 +2,7 @@
 <html>
 <head>
     <!-- Add variable $title to title tags to insert new value of each page -->
-    <title><?php echo $title ?></title>
+    <title><?php echo $title ?> - League of Forums</title>
     <!-- link to Bulma framework -->
     <link rel="stylesheet" type="text/css" href="css/bulma.css">
     <!-- link to Fonts -->
@@ -16,18 +16,21 @@
 
 <body>
 <?php include "login_form.php" ?>
-    <div id="container">
-        <div id="headerbuffer">
-            <header id="navcontainer">
-                <div id="logocontainer">
-                    <h1 id="logotext">League of Forums</h1>
-                </div>
-                <nav id="navigation">
-                    <ul>
-                        <li><a href="categories.php#">Home</a></li>
-                        <li><a href="categories.php#">Profile</a></li>
-                        <li><a onclick="showmodal()">Login</a></li>
-                    </ul>
-                </nav>
-            </header>
-        </div>
+  <nav class="nav has-shadow">
+    <div class="container">
+        <div class="nav-left">
+        <h1 id="title" class="nav-item title is-1">League of Forums</h1>
+      </div>
+      <div class="nav-right nav-menu">
+        <a class="nav-item">
+          Home
+        </a>
+        <a class="nav-item">
+          Profile
+        </a>
+        <a onClick="showloginmodal()" class="nav-item">
+          Login
+        </a>
+      </div>
+    </div>
+  </nav>
