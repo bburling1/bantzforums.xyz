@@ -1,7 +1,4 @@
 <?php
-//start session management
-session_start();
-
 include "header.php"
 ?>
 

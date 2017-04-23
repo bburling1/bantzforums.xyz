@@ -6,7 +6,11 @@
       <button onClick="closemodal()" class="delete"></button>
     </header>
     <section class="modal-card-body">
-      <form class="form login">
+      <form class="form login" action="../controller/login_process.php" method="post">
+        <?php
+        //user messages
+        $message = user_message();
+        ?>
         <div class="field">
           <label class="label"><b>Username</b></label>
           <p class="control">

@@ -15,7 +15,13 @@
 </head>
 
 <body>
-<?php include "login_form.php" ?>
+<?php
+  //start session management
+  session_start();
+
+  //include the login modal to all pages
+  include "login_form.php"
+?>
   <nav class="nav has-shadow">
     <div class="container">
         <div class="nav-left">

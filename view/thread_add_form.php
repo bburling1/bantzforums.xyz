@@ -1,6 +1,4 @@
 <?php
-  //start session management
-  session_start();
   //connect to the database
   require('../model/database.php');
   //retrieve functions
@@ -24,13 +22,13 @@
       <div class="field">
         <label class="label"><b>Subject</b></label>
         <p class="control">
-          <input class="input" type="text" placeholder="Thread Title/Subject" name="cat_name" required>
+          <input class="input" type="text" placeholder="Thread Title/Subject" name="subject" required>
         </p>
       </div>
       <div class="field">
         <label class="label"><b>Thread Content</b></label>
         <p class="control">
-          <textarea class="textarea" placeholder="Thread Content" name="cat_description"></textarea>
+          <textarea class="textarea" placeholder="Thread Content" name="content"></textarea>
         </p>
       </div>
       <div class="field">
