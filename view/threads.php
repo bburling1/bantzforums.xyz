@@ -14,7 +14,9 @@ include "header.php"
     <?php $result = get_category();?>
     <h2 id="categoriestitle">Threads from <?php echo $result['cat_name'];?></h2>
     <?php
-
+    //user messages
+    $message = user_message();
+    
     //call the get_categories() function
     $result = get_threads_by_category();
 

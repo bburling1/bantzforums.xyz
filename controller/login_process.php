@@ -1,4 +1,6 @@
 <?php
+	//start session management
+	session_start();
 	//connect to the database
 	require('../model/database.php');
 	//retrieve the functions
@@ -29,12 +31,14 @@
     //set the permissions state for the user
     $result = user_permissions($username);
     $_SESSION['permissions'] = $result;
+		header('location:../view/categories.php');
+
 	}
 	else
 	{
 		//if login not successful, create an error message to display on the login page
 		$_SESSION['error'] = 'Incorrect username or password. Please try again.';
 		//redirect to login.php
-		header('location:../view/login_form.php');
+		header('location:../view/about.php');
 	}
 ?>

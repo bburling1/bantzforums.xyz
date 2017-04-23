@@ -3,18 +3,19 @@
 require('../model/database.php');
 require('../model/functions_categories.php');
 
-
 include "header.php"
 ?>
-
 <div class="container content">
-<section class="section">
+
+  <section class="section">
+    <?php
+    //user messages
+    $message = user_message();
+    ?>
     <h2>Forum Categories:</h2>
     <?php
-
     //call the get_categories() function
     $result = get_categories();
-
     ?>
     <div class="box">
       <div class="column is-gapless">
@@ -25,16 +26,20 @@ include "header.php"
               <p><?php echo $row['cat_description'];?></p>
           </div>
           <div class="field is-grouped column is-one-quarter">
-              <p class="level-item control">
-                <a class="button" href="../view/category_update_form.php?cat_id=<?php echo $row['cat_id'];?>">
-                  Update
-                </a>
-              </p>
-              <p class="level-item control">
-                <a class="button is-danger">
-                  Delete post
-                </a>
-              </p>
+            <?php
+              if($_SESSION['permissions'] == 'admin'){
+                echo "<p class=\"level-item control\">
+                  <a class=\"button\" href=\"../view/category_update_form.php?cat_id=<?php echo \$row['cat_id'];?>\">
+                    Update
+                  </a>
+                </p>
+                <p class=\"level-item control\">
+                  <a class=\"button is-danger\">
+                    Delete post
+                  </a>
+                </p>";
+              }
+             ?>
           </div>
         </div>
       <?php endforeach; ?>

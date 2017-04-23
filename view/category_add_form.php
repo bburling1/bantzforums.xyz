@@ -3,7 +3,6 @@
   require('../model/database.php');
   //retrieve functions
   require('../model/functions_categories.php');
-  require('../model/functions_messages.php');
 
   $title = "Add Category";
 
