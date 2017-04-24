@@ -71,11 +71,11 @@ function login($username, $password)
 function user_permissions($username)
 {
   global $conn;
-  $sql = 'SELECT acc_type FROM users WHERE username = :username';
+  $sql = 'SELECT * FROM users WHERE username = :username';
   $statement = $conn->prepare($sql);
   $statement->bindValue(':username', $username);
   $statement->execute();
-  $result = $statement->fetchAll();
+  $result = $statement->fetch();
   $statement->closeCursor();
   return $result;
 }

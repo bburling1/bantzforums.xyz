@@ -30,9 +30,9 @@
 		$_SESSION['success'] = 'Hello ' . $username . '. Have a great day!';
     //set the permissions state for the user
     $result = user_permissions($username);
-    $_SESSION['permissions'] = $result;
+    $_SESSION['permissions'] = $result['acc_type'];
+		$_SESSION['user_id'] = $result['user_id'];
 		header('location:../view/categories.php');
-
 	}
 	else
 	{

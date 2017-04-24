@@ -22,24 +22,28 @@ include "header.php"
       <?php foreach($result as $row):?>
         <div class="columns box">
           <div class="column">
-              <h3><a href='threads.php?cat_id=<?php echo $row['cat_id'];?>'><?php echo $row['cat_name'];?></a></h3>
-              <p><?php echo $row['cat_description'];?></p>
+            <h3><a href='threads.php?cat_id=<?php echo $row['cat_id'];?>'><?php echo $row['cat_name'];?></a></h3>
+            <p><?php echo $row['cat_description'];?></p>
           </div>
           <div class="field is-grouped column is-one-quarter">
             <?php
-              if($_SESSION['permissions'] == 'admin'){
-                echo "<p class=\"level-item control\">
-                  <a class=\"button\" href=\"../view/category_update_form.php?cat_id=<?php echo \$row['cat_id'];?>\">
-                    Update
-                  </a>
-                </p>
-                <p class=\"level-item control\">
-                  <a class=\"button is-danger\">
-                    Delete post
-                  </a>
-                </p>";
+              if(isset($_SESSION['user'])){
+                if($_SESSION['permissions'] == 'admin'){
+            ?>
+            <p class="level-item control">
+              <a class="button" href="../view/category_update_form.php?cat_id=<?php echo $row['cat_id'];?>">
+                Update
+              </a>
+            </p>
+            <p class="level-item control">
+              <a class="button is-danger">
+                Delete post
+              </a>
+            </p>
+            <?php
+                }
               }
-             ?>
+            ?>
           </div>
         </div>
       <?php endforeach; ?>

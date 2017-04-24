@@ -35,9 +35,19 @@
         <a class="nav-item">
           Profile
         </a>
+        <?php
+          if(!isset($_SESSION['user'])){
+        ?>
         <a onClick="showloginmodal()" class="nav-item">
           Login
         </a>
+        <?php
+          } else {
+        ?>
+        <a href="../controller/logout_process.php" class="nav-item">
+          Logout
+        </a>
+        <?php } ?>
       </div>
     </div>
   </nav>
