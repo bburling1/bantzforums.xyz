@@ -6,7 +6,8 @@
 
   $title = "Add Category";
 
-  include "header.php"
+  include "header.php";
+  $user = is_user_admin();
 ?>
 
 <section class="section">

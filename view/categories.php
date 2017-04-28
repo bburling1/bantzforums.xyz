@@ -9,11 +9,25 @@ include "header.php"
 
   <section class="section">
     <?php
-    echo $_SESSION['user'];
     //user messages
     $message = user_message();
     ?>
-    <h2>Forum Categories:</h2>
+    <div class="columns">
+      <div class="column is-left">
+        <h2>Forum Categories:</h2>
+      </div>
+      <?php
+        if(isset($_SESSION['user'])){
+          if($_SESSION['permissions'] == 'admin'){
+      ?>
+      <div class="column level-right is-one-quarter">
+        <a href="../view/category_add_form.php" class="button is-info level-item">Add Category</a>
+      </div>
+      <?php
+          }
+        }
+      ?>
+    </div>
     <?php
     //call the get_categories() function
     $result = get_categories();

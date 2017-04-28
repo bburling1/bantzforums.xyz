@@ -20,6 +20,7 @@
   session_start();
 
   require('../model/functions_messages.php');
+  require('../model/functions_permissions.php');
 
   include "login_form.php";
 ?>

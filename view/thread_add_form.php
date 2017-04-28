@@ -1,6 +1,4 @@
 <?php
-  //redirect if not logged in
-  require('../controller/user_auth.php');
   //connect to the database
   require('../model/database.php');
   //retrieve functions
@@ -10,7 +8,7 @@
   $title = "Create a Thread";
 
   include "header.php";
-  echo $_SESSION['user'];
+  $user = is_user_logged_in();
 ?>
 
 <section class="section">
