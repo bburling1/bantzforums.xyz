@@ -1,10 +1,14 @@
 <?php
+  //redirect if not logged in as admin
+  require('../controller/admin_auth.php');
+  //redirect if no category parameters in url exist
+  require('../controller/parameter_error_process.php');
   //connect to the database
   require('../model/database.php');
   //retrieve functions
   require('../model/functions_categories.php');
 
-  $title = "Add Category";
+  $title = "Update Category";
 
   include "header.php"
 ?>

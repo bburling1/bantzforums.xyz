@@ -1,4 +1,6 @@
 <?php
+  //redirect if not logged in
+  require('../controller/user_auth.php');
   //connect to the database
   require('../model/database.php');
   //retrieve functions
@@ -7,7 +9,8 @@
 
   $title = "Create a Thread";
 
-  include "header.php"
+  include "header.php";
+  echo $_SESSION['user'];
 ?>
 
 <section class="section">
@@ -39,11 +42,21 @@
               $result = get_categories();
               foreach ($result as $row):
             ?>
-              <option value="<?php echo $row['cat_id'];?>"><?php echo $row['cat_name']; ?></option>
+              <option value="<?php echo $row['cat_id'];?>"
+              <?php
+              if (!empty(array_diff($_GET, ['']))) {
+                if($row['cat_id'] == $_GET['cat_id']){
+                  echo "selected";
+                }
+              }?>><?php echo $row['cat_name']; ?></option>
             <?php endforeach; ?>
             </select>
           </span>
         </p>
+      </div>
+      <div>
+        <!-- the table has a hidden form field to pass the userID from the Session to the next page -->
+        <input name="user_id" type="hidden" value="<?php echo $_SESSION['user_id']; ?>">
       </div>
       <div class="field">
         <p class="control">

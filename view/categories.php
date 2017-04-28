@@ -9,6 +9,7 @@ include "header.php"
 
   <section class="section">
     <?php
+    echo $_SESSION['user'];
     //user messages
     $message = user_message();
     ?>
