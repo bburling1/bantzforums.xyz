@@ -55,6 +55,8 @@
       <div>
         <!-- the table has a hidden form field to pass the userID from the Session to the next page -->
         <input name="user_id" type="hidden" value="<?php echo $_SESSION['user_id']; ?>">
+        <!-- the table has a hidden form field to pass the current date to the next page -->
+        <input name="created" type="hidden" value="<?php echo date("Y-m-d H:i:s");?>">
       </div>
       <div class="field">
         <p class="control">
