@@ -20,17 +20,49 @@
 		return $result;
 	}
 
+	//create a function to retrive a thread from the thread_id using the GET method
+	function get_thread()
+	{
+		global $conn;
+		//retrieve the cat_id from the URL
+		$thread_id = $_GET['thread_id'];
+		$sql = 'SELECT * FROM thread WHERE thread_id = :thread_id';
+		//use a prepared statement to enhance security
+		$statement = $conn->prepare($sql);
+		$statement->bindValue(':thread_id', $thread_id);
+		$statement->execute();
+		//use the fetch() method to retrieve a single row
+		$result = $statement->fetch();
+		$statement->closeCursor();
+		return $result;
+	}
+
+
 	//create a function to add a new thread to the database
 	function add_thread($subject, $content, $cat_id, $user_id, $created)
 	{
 		global $conn;
-		$sql = "INSERT INTO thread (subject, content, cat_id, user_id, created) VALUES (:subject, :content, :cat_id, :user_id, :created)";
+		$sql = "INSERT INTO thread (subject, content, cat_id, user_id, created, updated) VALUES (:subject, :content, :cat_id, :user_id, :created, :updated)";
 		$statement = $conn->prepare($sql);
 		$statement->bindvalue(':subject', $subject);
 		$statement->bindValue(':content', $content);
 		$statement->bindValue(':cat_id', $cat_id);
 		$statement->bindValue(':user_id', $user_id);
 		$statement->bindValue(':created', $created);
+		$statement->bindValue(':updated', '');
+		$result = $statement->execute();
+		$statement->closeCursor();
+		return $result;
+	}
+
+	function update_thread($content, $updated, $thread_id)
+	{
+		global $conn;
+		$sql = "UPDATE thread SET content = :content, updated = :updated WHERE thread_id = :thread_id";
+		$statement = $conn->prepare($sql);
+		$statement->bindValue(':content', $content);
+		$statement->bindValue(':updated', $updated);
+		$statement->bindValue(':thread_id', $thread_id);
 		$result = $statement->execute();
 		$statement->closeCursor();
 		return $result;

@@ -20,4 +20,13 @@
       header("location:../view/categories.php");
     }
   }
+
+  function is_user_owner()
+  {
+    $thread = get_thread();
+    if($_SESSION['user_id'] != $thread['user_id']){
+      $_SESSION['error'] = "You don't have permission to access this page";
+      header("location:../view/categories.php");
+    }
+  }
  ?>
