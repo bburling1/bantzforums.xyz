@@ -1,8 +1,14 @@
-/* RESET */
+
 *{
     font-family: OpenSans;
 }
 .error{
   text-align: center;
   background-color: #f2a2a2;
+}
+
+.logo{
+  height: 55px;
+  margin-top:15px;
+  margin-bottom:15px;
 }

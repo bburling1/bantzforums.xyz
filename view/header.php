@@ -24,31 +24,33 @@
 
   include "login_form.php";
 ?>
-  <nav class="nav has-shadow">
-    <div class="container">
-        <div class="nav-left">
-        <h1 id="title" class="nav-item title is-1">League of Forums</h1>
-      </div>
-      <div class="nav-right nav-menu">
-        <a class="nav-item">
-          Home
-        </a>
-        <a class="nav-item">
-          Profile
-        </a>
-        <?php
-          if(!isset($_SESSION['user'])){
-        ?>
-        <a onClick="showloginmodal()" class="nav-item">
-          Login
-        </a>
-        <?php
-          } else {
-        ?>
-        <a href="../controller/logout_process.php" class="nav-item">
-          Logout
-        </a>
-        <?php } ?>
-      </div>
-    </div>
+
+  <nav class="level nav has-shadow">
+    <p class="level-item has-text-centered">
+      <a class="link is-info">Home</a>
+    </p>
+    <p class="level-item has-text-centered">
+      <a class="link is-info">About</a>
+    </p>
+    <p class="level-item has-text-centered">
+      <img class="logo" src="images/lof_logo.PNG" alt="">
+    </p>
+    <p class="level-item has-text-centered">
+      <a class="link is-info">Profile</a>
+    </p>
+    <p class="level-item has-text-centered">
+      <?php
+        if(!isset($_SESSION['user'])){
+      ?>
+      <a onClick="showloginmodal()" class="link is-info">
+        Login
+      </a>
+      <?php
+        } else {
+      ?>
+      <a href="../controller/logout_process.php" class="link is-info">
+        Logout
+      </a>
+      <?php } ?>
+    </p>
   </nav>
