@@ -52,7 +52,7 @@ include "header.php"
             </p>
             <p class="level-item control">
               <a class="button is-danger">
-                Delete post
+                Delete Category
               </a>
             </p>
             <?php

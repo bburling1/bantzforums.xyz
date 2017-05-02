@@ -32,7 +32,7 @@
 		if($result)
 		{
 			//if category is successfully added, create a success message to display on the threads page
-			$_SESSION['success'] = 'Category successfully added.';
+			$_SESSION['success'] = 'Thread successfully created.';
 			//redirect to threads.php
 			header("location:../view/threads.php?cat_id=$cat_id");
 		}

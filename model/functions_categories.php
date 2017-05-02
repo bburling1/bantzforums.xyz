@@ -58,4 +58,8 @@
 		$statement->closeCursor();
 		return $result;
 	}
+
+	function delete_category(){
+		
+	}
 ?>
