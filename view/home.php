@@ -5,71 +5,76 @@ require('../model/database.php');
 include "header.php";
 ?>
 
+<section class="hero is-medium is-primary is-bold">
+  <div class="hero-body">
+    <div class="container">
+      <h1 class="title">
+        Welcome to League of Forums
+      </h1>
+      <h2 class="subtitle">
+        Choose one of the options below to begin <br> your contribution to the community!
+      </h2>
+    </div>
+  </div>
+</section> <!-- Banner -->
 <section class="section">
   <div class="container">
     <div class="tile is-ancestor">
-      <div class="tile is-parent is-4">
-        <article class="tile is-child notification is-primary">
-          <p class="title">Forum</p>
-          <p class="subtitle">Discuss all things gaming and create your own discussion topic using our forum!</p>
-          <div class="content">
-            <div class="field is-grouped">
-              <p class="control">
-                <a class="button is-primary is-inverted">
-                  View Categories
-                </a>
+      <div class="tile is-parent is-6">
+        <div class="tile is-child">
+          <div class="card">
+            <div class="card-content">
+              <p class="title">
+                View the Forum
               </p>
-              <p class="control">
-                <a class="button is-primary is-inverted">
-                  Create Post
-                </a>
+              <p class="subtitle">
+                Browse our forum or create a new post! Our forum contains all types of categories for discussion
               </p>
             </div>
-          </div>
-        </article>
-      </div>
-      <div class="tile is-parent is-4">
-        <article class="tile is-child notification is-info">
-          <p class="title">Profile</p>
-          <p class="subtitle">View your Profile or Register with our website if you haven't already!</p>
-          <div class="content">
-            <div class="field is-grouped">
-              <p class="control">
-                <a class="button is-info is-inverted">
-                  View Your Profile
-                </a>
+            <footer class="card-footer">
+              <p class="card-footer-item">
+                <span>
+                  <a class="button is-primary">View our Forum</a>
+                </span>
               </p>
-              <p class="control">
-                <a class="button is-info is-inverted">
-                  Create an Account
-                </a>
+              <p class="card-footer-item">
+                <span>
+                  <a class="button is-primary">Create a Post</a>
+                </span>
+              </p>
+            </footer>
+          </div>
+        </div>
+      </div>
+      <div class="tile is-parent is-6">
+        <div class="tile is-child">
+          <div class="card">
+            <div class="card-content">
+              <p class="title">
+                Profiles
+              </p>
+              <p class="subtitle">
+                Create an Account and become part of our Community! Or if you have an account already, Log In!
               </p>
             </div>
-          </div>
-        </article>
-      </div>
-      <div class="tile is-parent is-4">
-        <article class="tile is-child notification is-success">
-          <p class="title">Forum</p>
-          <div class="content">
-            <div class="field is-grouped">
-              <p class="control">
-                <a class="button is-success is-inverted">
-                  View Categories
-                </a>
+            <footer class="card-footer">
+              <p class="card-footer-item">
+                <span>
+                  <a class="button is-primary">Create an Account</a>
+                </span>
               </p>
-              <p class="control">
-                <a class="button is-success is-inverted">
-                  Create Post
-                </a>
+              <p class="card-footer-item">
+                <span>
+                  <a class="button is-primary">Log In</a>
+                </span>
               </p>
-            </div>
+            </footer>
           </div>
-        </article>
+        </div>
       </div>
-    </div>
-  </div>
-</section>
+    </div> <!-- tile -->
+  </div> <!-- container -->
+</section> <!-- main section -->
 
 <?php
 include "footer.php";

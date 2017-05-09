@@ -27,10 +27,10 @@
 
   <nav class="level nav has-shadow">
     <p class="level-item has-text-centered">
-      <a class="link is-info">Home</a>
+      <a class="link is-info" href="../index.php">Home</a>
     </p>
     <p class="level-item has-text-centered">
-      <a class="link is-info">About</a>
+      <a class="link is-info" href="../view/categories.php">Forum</a>
     </p>
     <p class="level-item has-text-centered">
       <img class="logo" src="images/lof_logo.PNG" alt="">

@@ -20,7 +20,7 @@
 		return $result;
 	}
 
-	//create a function to retrive a thread from the thread_id using the GET method
+	//create a function to retrieve a thread from the thread_id using the GET method
 	function get_thread()
 	{
 		global $conn;
