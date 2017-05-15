@@ -19,6 +19,10 @@ include "header.php";
 </section> <!-- Banner -->
 <section class="section">
   <div class="container">
+    <?php
+    //user messages
+    $message = user_message();
+    ?>
     <div class="tile is-ancestor">
       <div class="tile is-parent is-6">
         <div class="tile is-child">

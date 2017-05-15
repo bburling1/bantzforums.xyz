@@ -10,8 +10,10 @@
   <link rel="stylesheet" type="text/css" href="fonts/font.css">
   <!-- link to CSS -->
   <link rel="stylesheet" type="text/css" href="css/style.css">
+  <!-- link to jquery -->
+  <script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
   <!-- link to javascript -->
-  <script src="js/script.js"></script>
+  <script type="text/javascript" src="js/script.js"></script>
 </head>
 
 <body>

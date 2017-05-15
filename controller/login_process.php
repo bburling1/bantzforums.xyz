@@ -32,13 +32,13 @@
     $result = user_permissions($username);
     $_SESSION['permissions'] = $result['acc_type'];
 		$_SESSION['user_id'] = $result['user_id'];
-		header('location:../view/categories.php');
+		header('location:../view/home.php');
 	}
 	else
 	{
 		//if login not successful, create an error message to display on the login page
 		$_SESSION['error'] = 'Incorrect username or password. Please try again.';
 		//redirect to login.php
-		header('location:../view/about.php');
+		header('location:../view/home.php');
 	}
 ?>
