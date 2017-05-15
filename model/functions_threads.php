@@ -68,4 +68,20 @@
 		return $result;
 	}
 
+	function get_replies_by_thread()
+	//Use the GET method to retrieve a category, retrieve all products from that category
+	{
+		global $conn;
+		//retrieve the categoryID from the URL
+		$thread_id = $_GET['thread_id'];
+		//query the database to select all data from the product table
+		$sql = 'SELECT * FROM reply WHERE thread_id = :thread_id ORDER BY created';
+		//use a prepared statement to enhance security
+		$statement = $conn->prepare($sql);
+		$statement->bindValue(':thread_id', $thread_id);
+		$statement->execute();
+		$result = $statement->fetchAll();
+		$statement->closeCursor();
+		return $result;
+	}
 ?>

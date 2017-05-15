@@ -5,8 +5,19 @@ require('../model/functions_categories.php');
 
 include "header.php"
 ?>
+<section class="hero is-medium is-primary is-bold">
+  <div class="hero-body">
+    <div class="container">
+      <h1 class="title">
+        The Forums
+      </h1>
+      <h2 class="subtitle">
+        View the available categories below!
+      </h2>
+    </div>
+  </div>
+</section> <!-- Banner -->
 <div class="container content">
-
   <section class="section">
     <?php
     //user messages

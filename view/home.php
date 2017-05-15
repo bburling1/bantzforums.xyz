@@ -34,12 +34,12 @@ include "header.php";
             <footer class="card-footer">
               <p class="card-footer-item">
                 <span>
-                  <a class="button is-primary">View our Forum</a>
+                  <a class="button is-primary" href="../view/categories.php">View our Forum</a>
                 </span>
               </p>
               <p class="card-footer-item">
                 <span>
-                  <a class="button is-primary">Create a Post</a>
+                  <a class="button is-primary" href="../view/thread_add_form.php">Create a Post</a>
                 </span>
               </p>
             </footer>
@@ -60,12 +60,12 @@ include "header.php";
             <footer class="card-footer">
               <p class="card-footer-item">
                 <span>
-                  <a class="button is-primary">Create an Account</a>
+                  <a class="button is-primary" href="../view/registration_form.php">Create an Account</a>
                 </span>
               </p>
               <p class="card-footer-item">
                 <span>
-                  <a class="button is-primary">Log In</a>
+                  <a class="button is-primary" onClick="showloginmodal()">Log In</a>
                 </span>
               </p>
             </footer>
