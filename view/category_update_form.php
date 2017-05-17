@@ -1,15 +1,15 @@
 <?php
-  //start session management
-  session_start();
+  //redirect if no category parameters in url exist
+  require('../controller/parameter_error_process.php');
   //connect to the database
   require('../model/database.php');
   //retrieve functions
   require('../model/functions_categories.php');
-  require('../model/functions_messages.php');
 
-  $title = "Add Category";
+  $title = "Update Category";
 
-  include "header.php"
+  include "header.php";
+  $user = is_user_admin();
 ?>
 
 <section class="section">

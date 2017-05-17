@@ -32,3 +32,5 @@ function confirm_password() {
   }
   return ok;
 }
+
+// AJAX Login Function
