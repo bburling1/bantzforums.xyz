@@ -53,7 +53,6 @@
         </p>
       </div>
       <div>
-        <!-- CHANGE TO THE PROCESS -->
         <!-- the table has a hidden form field to pass the userID from the Session to the next page -->
         <input name="user_id" type="hidden" value="<?php echo $_SESSION['user_id']; ?>">
         <!-- the table has a hidden form field to pass the current date to the next page -->

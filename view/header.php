@@ -26,7 +26,7 @@
 
   include "login_form.php";
 ?>
-
+<div id="container">
   <nav class="level nav has-shadow">
     <p class="level-item has-text-centered">
       <a class="link is-info" href="../index.php">Home</a>

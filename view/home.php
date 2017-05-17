@@ -24,7 +24,7 @@ include "header.php";
     $message = user_message();
     ?>
     <div class="tile is-ancestor">
-      <div class="tile is-parent is-6">
+      <div class="tile is-parent is-6 homepagetile">
         <div class="tile is-child">
           <div class="card">
             <div class="card-content">
@@ -50,7 +50,7 @@ include "header.php";
           </div>
         </div>
       </div>
-      <div class="tile is-parent is-6">
+      <div class="tile is-parent is-6 homepagetile">
         <div class="tile is-child">
           <div class="card">
             <div class="card-content">

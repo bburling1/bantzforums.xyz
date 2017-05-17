@@ -40,7 +40,7 @@ include "header.php"
       <?php foreach($result as $row):?>
         <div class="columns box">
           <div class="column">
-              <h3><a href='#'><?php echo $row['subject'];?></a></h3>
+              <h3><a href='../view/post.php?thread_id=<?php echo $row['thread_id'];?>'><?php echo $row['subject'];?></a></h3>
               <p>Created on <?php $created = $row['created']; echo substr($created,0,10) . " at " . substr($created,11,5);?> by <?php $user_id = $row['user_id']; $username = get_username_by_user_id($user_id); echo $username[0];?></p>
               <?php
                 if($row['updated'] != "0000-00-00 00:00:00"){

@@ -13,6 +13,10 @@
 
 <section class="section">
   <div class="container">
+    <?php
+      //user messages
+      $message = user_message();
+    ?>
     <div class="box" id="threadbox">
       <article class="media">
         <div class="media-left">
@@ -50,6 +54,37 @@
         </article>
       </div>
     <?php endforeach; ?>
+    <div class="box" id="threadbox">
+      <article class="media">
+        <figure class="media-left">
+          <p class="image is-128x128">
+            <img src="http://bulma.io/images/placeholders/128x128.png">
+          </p>
+        </figure>
+        <div class="media-content">
+          <form action="../controller/reply_add_process.php" method="post">
+            <div class="field">
+              <p class="control">
+                <textarea name="content" class="textarea" placeholder="Add a comment..."></textarea>
+              </p>
+            </div>
+            <div>
+              <!-- the table has a hidden form field to pass the userID from the Session to the next page -->
+              <input name="user_id" type="hidden" value="<?php echo $_SESSION['user_id']; ?>">
+              <!-- the table has a hidden form field to pass the current date to the next page -->
+              <input name="created" type="hidden" value="<?php echo date("Y-m-d H:i:s");?>">
+              <!-- the table has a hidden form field to pass the thread id to the next page -->
+              <input name="thread_id" type="hidden" value="<?php echo $_GET['thread_id'];?>">
+            </div>
+            <div class="field">
+              <p class="control">
+                <button class="button is-primary" type="submit">Submit</button>
+              </p>
+            </div>
+          </form>
+        </div>
+      </article>
+    </div>
   </div>
 </section>
 

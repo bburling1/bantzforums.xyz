@@ -84,4 +84,18 @@
 		$statement->closeCursor();
 		return $result;
 	}
+
+	function add_reply($content, $thread_id, $user_id, $created)
+	{
+		global $conn;
+		$sql = "INSERT INTO reply (content, thread_id, user_id, created) VALUES (:content, :thread_id, :user_id, :created)";
+		$statement = $conn->prepare($sql);
+		$statement->bindValue(':content', $content);
+		$statement->bindValue(':thread_id', $thread_id);
+		$statement->bindValue(':user_id', $user_id);
+		$statement->bindValue(':created', $created);
+		$result = $statement->execute();
+		$statement->closeCursor();
+		return $result;
+	}
 ?>

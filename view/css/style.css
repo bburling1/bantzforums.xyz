@@ -13,5 +13,12 @@
   margin-bottom:15px;
 }
 #threadbox{
-  background-color: rgba(0, 255, 217, 0.1) !important;
+  background-color: rgba(0, 209, 178, 0.1) !important;
+}
+
+#container{
+  background-color: rgba(0, 209, 178, 0.1) !important;
+}
+.section{
+  background-color: rgba(0, 209, 178, 0.01) !important;
 }
