@@ -79,5 +79,16 @@ function user_permissions($username)
   $statement->closeCursor();
   return $result;
 }
+ function get_user_information(){
+   $user_id = $_SESSION['user_id'];
+   global $conn;
+   $sql = 'SELECT * FROM users WHERE user_id = :user_id';
+   $statement = $conn->prepare($sql);
+   $statement->bindValue(':user_id', $user_id);
+   $statement->execute();
+   $result = $statement->fetch();
+   $statement->closeCursor();
+   return $result;
+ }
 
 ?>

@@ -8,7 +8,6 @@
 
 		//retrieve the categoryID from the URL
 		$cat_id = $_GET['cat_id'];
-
 		//query the database to select all data from the product table
 		$sql = 'SELECT * FROM thread WHERE cat_id = :cat_id ORDER BY thread_id';
 		//use a prepared statement to enhance security
