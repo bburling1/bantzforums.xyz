@@ -53,7 +53,8 @@
           </div>
         </article>
       </div>
-    <?php endforeach; ?>
+    <?php endforeach;
+    if(isset($_SESSION['user'])){?>
     <div class="box" id="threadbox">
       <article class="media">
         <figure class="media-left">
@@ -85,6 +86,7 @@
         </div>
       </article>
     </div>
+    <?php } ?>
   </div>
 </section>
 

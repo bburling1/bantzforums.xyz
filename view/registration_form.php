@@ -39,7 +39,7 @@ include "header.php"
     <div class="field">
       <label class="label"><b>Confirm Password*</b></label>
       <p class="control">
-        <input id="password_confirm" onkeyup="confirm_password()"class="input" type="password" placeholder="Confirm your Password" name="password_confirm" required>
+        <input id="password_confirm" onkeyup="confirm_password()" class="input" type="password" placeholder="Confirm your Password" name="password_confirm" required>
         <p id="passwordnotification" class="help is-danger"></p>
       </p>
     </div>

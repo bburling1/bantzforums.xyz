@@ -17,7 +17,7 @@
         </div>
       </div>
       <div class="column is-6">
-        <form class="form register" onsubmit="return confirm_password()" action="../controller/user_update_process.php" method="post">
+        <form class="form register" onsubmit="return confirm_password()" action="../controller/update_user_information.php" method="post">
           <h2 class="form-title">Update Your Information</h2>
           <?php
           $user = get_user_information();
@@ -65,7 +65,8 @@
             <div class="field-body">
               <div class="field">
                 <div class="control">
-                  <input id="password_confirm" class="input" type="password" placeholder="Confirm your Password" name="password_confirm" required>
+                  <input id="password_confirm" onkeyup="confirm_password()" class="input" type="password" placeholder="Confirm your Password" name="password_confirm" required>
+                  <p id="passwordnotification" class="help is-danger"></p>
                 </div>
               </div>
             </div>
