@@ -21,23 +21,24 @@
       </h2>
     </div>
   </div>
-  <div class="hero-foot">
-    <nav class="tabs is-boxed is-fullwidth">
-      <div class="container">
-        <ul>
-          <li class="is-active"><a>Overview</a></li>
-          <li><a>Recent Activity</a></li>
-          <li><a>Your LoL Account</a></li>
-          <li><a>Settings</a></li>
-        </ul>
-      </div>
-    </nav>
-  </div>
+
 </section>
 <div class="container">
   <?php $message = user_message(); ?>
 </div>
-<?php include "profile/overview.php"; ?>
+<div id="tabs">
+  <div class="tabs is-centered">
+    <ul>
+      <li class="is-active"><a href="#tabs-1">Overview</a></li>
+      <li><a href="profile/activity.php">Recent Activity</a></li>
+      <li><a>Your League Stats</a></li>
+      <li><a>Settings</a></li>
+    </ul>
+  </div>
+  <div id="tabs-1">
+    <?php include "profile/overview.php"; ?>
+  </div>
+</div>
 
 
 <?php

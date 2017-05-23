@@ -10,6 +10,7 @@
               <i class="fa fa-github"></i>
             </a>
           </p>
+          <p><?php var_dump($_SESSION);?>
         </div>
       </div>
   </footer>

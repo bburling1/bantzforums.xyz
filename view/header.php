@@ -12,6 +12,7 @@
   <link rel="stylesheet" type="text/css" href="css/style.css">
   <!-- link to jquery -->
   <script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
   <!-- link to javascript -->
   <script type="text/javascript" src="js/script.js"></script>
 </head>
