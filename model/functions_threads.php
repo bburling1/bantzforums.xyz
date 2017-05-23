@@ -97,4 +97,9 @@
 		$statement->closeCursor();
 		return $result;
 	}
+
+	function get_threads_by_user($user){
+		global $conn;
+
+	}
 ?>
