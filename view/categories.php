@@ -3,6 +3,8 @@
 require('../model/database.php');
 require('../model/functions_categories.php');
 
+$title = "Forum Categories";
+
 include "header.php"
 ?>
 <section class="hero is-medium is-primary is-bold">

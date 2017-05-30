@@ -5,7 +5,7 @@
   require('../model/functions_threads.php');
   require('../model/functions_users.php');
 
-
+  $title = "Post";
   include "header.php";
   $t = get_thread();
 

@@ -39,7 +39,7 @@
       <img class="logo" src="images/lof_logo.PNG" alt="">
     </p>
     <p class="level-item has-text-centered">
-      <a class="link is-info">Profile</a>
+      <a class="link is-info" href="../view/profile.php">Profile</a>
     </p>
     <p class="level-item has-text-centered">
       <?php

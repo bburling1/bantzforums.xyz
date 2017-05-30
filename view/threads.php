@@ -4,8 +4,8 @@ require('../model/database.php');
 require('../model/functions_categories.php');
 require('../model/functions_threads.php');
 require('../model/functions_users.php');
-
-
+$result = get_category();
+$title = $result['cat_name'];
 include "header.php"
 ?>
 

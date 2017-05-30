@@ -104,4 +104,15 @@ function user_permissions($username)
    return $result;
  }
 
+ function save_riot_id($riotid, $user_id){
+   global $conn;
+   $sql = "UPDATE users SET riotid = :riotid WHERE user_id = :user_id";
+   $statement = $conn->prepare($sql);
+   $statement->bindValue(':riotid', $riotid);
+   $statement->bindValue(':user_id', $user_id);
+   $result = $statement->execute();
+   $statement->closeCursor();
+   return $result;
+ }
+
 ?>

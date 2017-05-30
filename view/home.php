@@ -2,6 +2,8 @@
 //connect to the database
 require('../model/database.php');
 
+$title = "Home";
+
 include "header.php";
 ?>
 

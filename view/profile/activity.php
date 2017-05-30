@@ -1,10 +1,5 @@
-<?php require('../../model/functions_messages.php'); ?>
+<?php session_start(); ?>
 <section class="section">
-  <div class="container">
-    <?php
-    $message = user_message();
-    ?>
-  </div>
   <div class="container">
     <h4>Recent Posts</h4>
     <div

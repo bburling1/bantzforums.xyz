@@ -23,17 +23,17 @@
   </div>
 
 </section>
-<div class="container">
-  <?php $message = user_message(); ?>
-</div>
+
 <div id="tabs">
   <div class="tabs is-centered">
     <ul>
-      <li class="is-active"><a href="#tabs-1">Overview</a></li>
-      <li><a href="profile/activity.php">Recent Activity</a></li>
-      <li><a>Your League Stats</a></li>
-      <li><a>Settings</a></li>
+      <li class="tab"><a href="#tabs-1">Overview</a></li>
+      <li class="tab"><a href="profile/activity.php">Recent Activity</a></li>
+      <li class="tab"><a href="profile/lolaccount.php">Your League Stats</a></li>
     </ul>
+  </div>
+  <div class="container">
+    <?php $message = user_message(); ?>
   </div>
   <div id="tabs-1">
     <?php include "profile/overview.php"; ?>
