@@ -1,5 +1,7 @@
 <?php
 session_start();
+require('../../model/database.php');
+require('../../model/functions_users.php');
 ?>
 <section class="section">
   <div class="container">
@@ -7,6 +9,19 @@ session_start();
       <div class="column is-4">
       </div>
       <div class="column is-4">
+        <?php
+        if($_SESSION['acclinked'] == TRUE){
+          $result = get_league_stats();
+        ?>
+        <h3 class="title is-3">Your League Rank:</h3>
+        <h4 class="title is-4"><?php echo $result['rank']; ?>
+        <figure class="image">
+          <img  id="rankimage" src="../view/images/tier-icons/tier-icons/<?php echo $result['rank']; ?>.png">
+        </figure>
+
+        <?php
+      } else {
+        ?>
         <form class="form" action="../controller/get_ranked_data.php" method="post">
           <h2 class="form-title">Link Your League of Legends Account</h2>
           <div class="field">
@@ -35,6 +50,7 @@ session_start();
             </p>
           </div>
         </form>
+        <?php } ?>
       </div>
       <div class="column is-4">
       </div>

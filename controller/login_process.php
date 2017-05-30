@@ -32,6 +32,11 @@
     $result = user_permissions($username);
     $_SESSION['permissions'] = $result['acc_type'];
 		$_SESSION['user_id'] = $result['user_id'];
+		if($result['riotid'] != ''){
+			$_SESSION['acclinked'] = TRUE;
+		} else {
+			$_SESSION['acclinked'] = FALSE;
+		}
 		header('location:../view/home.php');
 	}
 	else

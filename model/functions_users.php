@@ -115,4 +115,29 @@ function user_permissions($username)
    return $result;
  }
 
+ function save_stats($rank, $user_id, $lolusername, $region){
+   global $conn;
+   $sql = "INSERT INTO userstats (rank, user_id, lolusername, region) VALUES (:rank, :user_id, :lolusername, :region)";
+   $statement = $conn->prepare($sql);
+   $statement->bindValue(':rank', $rank);
+   $statement->bindValue(':user_id', $user_id);
+   $statement->bindValue(':lolusername', $lolusername);
+   $statement->bindValue(':region', $region);
+   $result = $statement->execute();
+   $statement->closeCursor();
+   return $result;
+ }
+
+ function get_league_stats(){
+   $user_id = $_SESSION['user_id'];
+   global $conn;
+   $sql = "SELECT * FROM userstats WHERE user_id = :user_id";
+   $statement = $conn->prepare($sql);
+   $statement->bindValue(':user_id', $user_id);
+   $statement->execute();
+   $result = $statement->fetch();
+   $statement->closeCursor();
+   return $result;
+ }
+
 ?>
