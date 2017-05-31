@@ -11,7 +11,13 @@
         <div class="card">
           <div class="card-content">
             <figure class="image">
+              <?php
+              if($_SESSION['avatar'] == FALSE){
+              ?>
+              <p>You do not have an avatar</p>
+              <?php } else {?>
               <img src="http://bulma.io/images/placeholders/128x128.png">
+              <?php } ?>
             </figure>
           </div>
         </div>
@@ -96,7 +102,7 @@
               <div class="field-body">
                 <div class="field">
                   <div class="control">
-                    <input type="file" name="fileToUpload" id="fileToUpload">
+                    <input type="file" name="uploadedimage" id="fileToUpload">
                   </div>
                 </div>
               </div>

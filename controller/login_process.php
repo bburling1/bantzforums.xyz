@@ -37,6 +37,11 @@
 		} else {
 			$_SESSION['acclinked'] = FALSE;
 		}
+		if($result['avatar'] != ''){
+			$_SESSION['avatar'] = TRUE;
+		} else {
+			$_SESSION['avatar'] = FALSE;
+		}
 		header('location:../view/home.php');
 	}
 	else

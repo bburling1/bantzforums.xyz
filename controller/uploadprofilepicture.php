@@ -1,44 +1,38 @@
 <?php
-$target_dir = "../view/images/profile/";
-$target_file = $target_dir . basename($_FILES["fileToUpload"]["name"]);
-$uploadOk = 1;
-$imageFileType = pathinfo($target_file,PATHINFO_EXTENSION);
-// Check if image file is a actual image or fake image
-if(isset($_POST["submit"])) {
-    $check = getimagesize($_FILES["fileToUpload"]["tmp_name"]);
-    if($check !== false) {
-        echo "File is an image - " . $check["mime"] . ".";
-        $uploadOk = 1;
-    } else {
-        echo "File is not an image.";
-        $uploadOk = 0;
+session_start();
+include("../model/database.php");
+include("../model/functions_users.php");
+
+$user_id = $_SESSION['user_id'];
+
+function GetImageExtension($imagetype)
+	 {
+   if(empty($imagetype)) return false;
+   switch($imagetype)
+   {
+       case 'image/bmp': return '.bmp';
+       case 'image/gif': return '.gif';
+       case 'image/jpeg': return '.jpg';
+       case 'image/png': return '.png';
+       default: return false;
+   }
+ }
+
+if (!empty($_FILES["uploadedimage"]["name"])) {
+	$file_name=$_FILES["uploadedimage"]["name"];
+	$temp_name=$_FILES["uploadedimage"]["tmp_name"];
+	$imgtype=$_FILES["uploadedimage"]["type"];
+	$ext= GetImageExtension($imgtype);
+	$imagename=date("d-m-Y")."-".time().$ext;
+	$target_path = "../view/images/".$imagename;
+  if(move_uploaded_file($temp_name, $target_path)) {
+   	$result = saveimagepath($imagename, $user_id);
+    if($result){
+      $_SESSION['success'] = "You have successfully updated your profile picture";
+      header("location:../view/profile.php");
     }
-}
-// Check if file already exists
-if (file_exists($target_file)) {
-    echo "Sorry, file already exists.";
-    $uploadOk = 0;
-}
-// Check file size
-if ($_FILES["fileToUpload"]["size"] > 500000) {
-    echo "Sorry, your file is too large.";
-    $uploadOk = 0;
-}
-// Allow certain file formats
-if($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg"
-&& $imageFileType != "gif" ) {
-    echo "Sorry, only JPG, JPEG, PNG & GIF files are allowed.";
-    $uploadOk = 0;
-}
-// Check if $uploadOk is set to 0 by an error
-if ($uploadOk == 0) {
-    echo "Sorry, your file was not uploaded.";
-// if everything is ok, try to upload file
-} else {
-    if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file)) {
-        echo "The file ". basename( $_FILES["fileToUpload"]["name"]). " has been uploaded.";
-    } else {
-        echo "Sorry, there was an error uploading your file.";
-    }
+  } else {
+     exit("Error While uploading image on the server");
+  }
 }
 ?>

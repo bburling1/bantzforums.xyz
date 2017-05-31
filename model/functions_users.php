@@ -140,4 +140,14 @@ function user_permissions($username)
    return $result;
  }
 
+ function saveimagepath($imagename, $user_id){
+   global $conn;
+   $sql = "UPDATE users SET avatar = :avatar WHERE user_id = :user_id";
+   $statement = $conn->prepare($sql);
+   $statement->bindValue(':avatar', $imagename);
+   $statement->bindValue(':user_id', $user_id);
+   $result = $statement->execute();
+   $statement->closeCursor();
+   return $result;
+ }
 ?>
