@@ -38,9 +38,9 @@
 			$_SESSION['acclinked'] = FALSE;
 		}
 		if($result['avatar'] != ''){
-			$_SESSION['avatar'] = TRUE;
+			$_SESSION['avatar'] = $result['avatar'];
 		} else {
-			$_SESSION['avatar'] = FALSE;
+			$_SESSION['avatar'] = '';
 		}
 		header('location:../view/home.php');
 	}
