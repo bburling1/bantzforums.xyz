@@ -59,6 +59,9 @@ include "header.php";
               <p class="title">
                 Profiles
               </p>
+              <?php
+              if(!isset($_SESSION['user'])){
+              ?>
               <p class="subtitle">
                 Create an Account and become part of our Community! Or if you have an account already, Log In!
               </p>
@@ -74,6 +77,22 @@ include "header.php";
                   <a class="button is-primary" onClick="showloginmodal()">Log In</a>
                 </span>
               </p>
+              <?php
+              } else {
+              ?>
+              <p class="subtitle">
+                You are now logged in. View your profile page and link your League of Legends account to check your rank!
+              </p>
+            </div>
+            <footer class="card-footer">
+              <p class="card-footer-item">
+                <span>
+                  <a class="button is-primary" href="../view/profile.php">Your Profile Page</a>
+                </span>
+              </p>
+              <?php
+              }
+              ?>
             </footer>
           </div>
         </div>
