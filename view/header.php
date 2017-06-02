@@ -4,14 +4,14 @@
   <!-- Add variable $title to title tags to insert new value of each page -->
   <title><?php echo $title ?> - League of Forums</title>
   <!-- link to Bulma framework -->
-  <link rel="stylesheet" type="text/css" href="css/bulma.css">
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.4.2/css/bulma.css">
   <!-- link to Fonts -->
   <link rel="stylesheet" type="text/css" href="fonts/font-awesome.min.css">
   <link rel="stylesheet" type="text/css" href="fonts/font.css">
   <!-- link to CSS -->
   <link rel="stylesheet" type="text/css" href="css/style.css">
   <!-- link to jquery -->
-  <script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
+  <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
   <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
   <!-- link to javascript -->
   <script type="text/javascript" src="js/script.js"></script>
@@ -36,7 +36,9 @@
       <a class="link is-info" href="../view/categories.php">Forum</a>
     </p>
     <p class="level-item has-text-centered">
-      <img class="logo" src="images/lof_logo.PNG" alt="">
+      <a class="nav-item">
+        <img src="images/lof_logo.PNG" alt="League of Forums Logo">
+      </a>
     </p>
     <p class="level-item has-text-centered">
       <a class="link is-info" href="../view/profile.php">Profile</a>
