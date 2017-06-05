@@ -26,7 +26,7 @@
             $avatar = get_user_avatar($user_id);
             if($avatar){
             ?>
-            <img src="../view/images/<?php echo $avatar; ?>" alt="Profile Picture">
+            <img src="../view/images/<?php echo $avatar; ?>" alt="<?php echo $avatar; ?>">
             <?php } else { ?>
             <img src="../view/images/user_default.png" alt="Default User">
             <?php } ?>
