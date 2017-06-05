@@ -20,7 +20,7 @@
 <body>
 <?php
   //start session management
-  
+  session_start();
 
   require('../model/functions_messages.php');
   require('../model/functions_permissions.php');
