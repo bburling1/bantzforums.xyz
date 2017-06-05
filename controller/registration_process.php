@@ -5,7 +5,7 @@
 	require('../model/database.php');
 	//retrieve the functions
 	require('../model/functions_users.php');
-	
+
 	//retrieve the registration details into the form
 	$username = $_POST['username'];
 	$email = $_POST['email'];
@@ -17,6 +17,12 @@
 	{
 		//if password is less than 8 characters intialise a session called 'error' with an appropriate user message
 		$_SESSION['error'] = 'Password must be 8 characters or more.';
+		//redirect to the registration page to display the message
+		header("location:../view/registration_form.php");
+		exit();
+	}
+	if(strlen($username) < 6){
+		$_SESSION['error'] = 'Username must be 6 characters or more.';
 		//redirect to the registration page to display the message
 		header("location:../view/registration_form.php");
 		exit();
