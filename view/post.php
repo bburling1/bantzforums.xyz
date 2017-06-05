@@ -48,7 +48,7 @@
               <img src="../view/images/<?php echo $avatar;?>" alt="Profile Picture">
               <?php} else {?>
               <img src="../view/images/user_default.png" alt="Default User">
-              }
+              <?php } ?>
             </figure>
           </div>
           <div class="media-content">
