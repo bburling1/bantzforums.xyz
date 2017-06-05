@@ -10,7 +10,7 @@ include "header.php"
 <section class="section">
 
 <div class="container content">
-  <form class="form register" action="../controller/registration_process.php" method="post">
+  <form class="form register" onsubmit="submit.disabled = true; return true;" action="../controller/registration_process.php" method="post">
     <h2 class="form-title">Register to League of Forums</h2>
     <?php
       //user messages

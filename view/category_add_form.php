@@ -12,7 +12,7 @@
 
 <section class="section">
   <div class="container content">
-    <form class="form" action="../controller/category_add_process.php" method="post">
+    <form class="form" onsubmit="submit.disabled = true; return true;" action="../controller/category_add_process.php" method="post">
       <h2 class="form-title">Add a Discussion Category</h2>
       <?php
         //user messages
@@ -32,7 +32,7 @@
       </div>
       <div class="field">
         <p class="control">
-          <button class="button is-primary" type="submit">Register</button>
+          <button name="submit" class="button is-primary" type="submit">Register</button>
         </p>
       </div>
     </form>

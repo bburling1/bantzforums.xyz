@@ -14,7 +14,7 @@
 
 <section class="section">
   <div class="container content">
-    <form class="form" action="../controller/thread_update_process.php" method="post">
+    <form class="form" onsubmit="submit.disabled = true; return true;" action="../controller/thread_update_process.php" method="post">
       <h2 class="form-title">Edit Thread</h2>
       <?php
         //user messages

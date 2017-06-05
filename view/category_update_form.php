@@ -14,7 +14,7 @@
 
 <section class="section">
   <div class="container content">
-    <form class="form" action="../controller/category_update_process.php" method="post">
+    <form class="form" onsubmit="submit.disabled = true; return true;" action="../controller/category_update_process.php" method="post">
       <h2 class="form-title">Update a Discussion Category</h2>
       <?php
         //user messages
