@@ -46,7 +46,7 @@ include "header.php"
     <p>Have an account? <a onclick="showloginmodal()">Login</a> here!</p>
     <div class="field">
       <p class="control">
-        <button id="registersubmit" class="button is-primary" type="submit" disabled>Register</button>
+        <button id="registersubmit" name="submit" class="button is-primary" type="submit" disabled>Register</button>
       </p>
     </div>
   </form>

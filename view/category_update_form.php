@@ -41,7 +41,7 @@
       </div>
       <div class="field">
         <p class="control">
-          <button class="button is-primary" type="submit">Register</button>
+          <button name="submit" class="button is-primary" type="submit">Update Category</button>
         </p>
       </div>
     </form>
