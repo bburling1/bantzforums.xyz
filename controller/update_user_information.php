@@ -58,7 +58,7 @@
 		//if product is successfully added, create a success message to display on the products page
 		$_SESSION['success'] = 'Information Sucessfully Updated';
 		//redirect to products.php
-		header('location:../profile.php');
+		header('location:../view/profile.php');
 	}
 	else
 	{
