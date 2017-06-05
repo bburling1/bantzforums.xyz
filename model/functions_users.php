@@ -44,7 +44,7 @@ function update_user($user_id, $email, $password, $salt){
   global $conn;
   $sql = "UPDATE users SET email = :email, password = :password, salt = :salt WHERE user_id = :user_id";
   $statement = $conn->prepare($sql);
-  $statement->bindValue(':username', $user_id);
+  $statement->bindValue(':user_id', $user_id);
   $statement->bindValue(':email', $email);
   $statement->bindValue(':password', $password);
   $statement->bindValue(':salt', $salt);
