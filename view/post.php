@@ -26,7 +26,7 @@
             $avatar = get_user_avatar($user_id);
             if($avatar){
             ?>
-            <img src="../view/images/<?php echo $avatar; ?>" alt="<?php print_r($avatar); ?>">
+            <img src="../view/images/<?php echo $avatar[0]; ?>" alt="Profile Picture">
             <?php } else { ?>
             <img src="../view/images/user_default.png" alt="Default User">
             <?php } ?>
@@ -52,7 +52,7 @@
               $avatar = get_user_avatar($user_id);
               if($avatar){
               ?>
-              <img src="../view/images/<?php echo $avatar; ?>" alt="Profile Picture">
+              <img src="../view/images/<?php echo $avatar[0]; ?>" alt="Profile Picture">
               <?php } else { ?>
               <img src="../view/images/user_default.png" alt="Default User">
               <?php } ?>
