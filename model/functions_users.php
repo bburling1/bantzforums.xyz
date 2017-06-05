@@ -40,6 +40,19 @@ function add_user($username, $email, $password, $salt)
  return $result;
 }
 
+function update_user($user_id, $email, $password, $salt){
+  global $conn;
+  $sql = "UPDATE users SET email = :email, password = :password, salt = :salt WHERE user_id = :user_id";
+  $statement = $conn->prepare($sql);
+  $statement->bindValue(':username', $user_id);
+  $statement->bindValue(':email', $email);
+  $statement->bindValue(':password', $password);
+  $statement->bindValue(':salt', $salt);
+  $result = $statement->execute();
+  $statement->closeCursor();
+  return $result;
+  }
+
 function get_username_by_user_id($user_id)
 {
   global $conn;

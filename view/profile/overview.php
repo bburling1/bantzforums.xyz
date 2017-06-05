@@ -46,7 +46,7 @@
             <div class="field-body">
               <div class="field">
                 <div class="control">
-                  <input name="email" class="input" type="email" placeholder="<?php echo $user['email'];?>">
+                  <input onfocusout="checkemail()" id="email" name="email" class="input" type="email" placeholder="<?php echo $user['email'];?>">
                 </div>
               </div>
             </div>
@@ -75,6 +75,9 @@
                 </div>
               </div>
             </div>
+          </div>
+          <div>
+            <input name="user_id" type="hidden" value="<?php echo $_SESSION['user_id']; ?>">
           </div>
           <p id="registernotification" class="help is-danger"></p>
           <div class="field is-horizontal">
