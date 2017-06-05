@@ -41,7 +41,14 @@
           <div class="media-left">
             <h6 class="subtitle has-text-centered"><strong><?php $user_id = $row['user_id']; $username = get_username_by_user_id($user_id); echo $username[0];?></strong></h6>
             <figure class="image is-128x128">
-              <img src="../view/images/tier-icons/base-icons/bronze.png" alt="Image">
+              <?php
+              $avatar = get_user_avatar($user_id);
+              if($avatar){
+              ?>
+              <img src="../view/images/<?php echo $avatar;?>" alt="Profile Picture">
+              <?php} else {?>
+              <img src="../view/images/user_default.png" alt="Default User">
+              }
             </figure>
           </div>
           <div class="media-content">
@@ -59,7 +66,7 @@
       <article class="media">
         <figure class="media-left">
           <p class="image is-128x128">
-            <img src="http://bulma.io/images/placeholders/128x128.png">
+            <img src="../view/images/<?php echo $_SESSION['avatar']; ?>">
           </p>
         </figure>
         <div class="media-content">
