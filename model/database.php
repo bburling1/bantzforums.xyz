@@ -1,7 +1,7 @@
 <?php
 	//database connection details
 	$host = 'mysql.bantzforums.xyz';
-	$user = 'bburling1';
+	$user = 'bburling';
 	$password = '8r0ck8url1ng';
 	$database = 'leagueofforums';
 
