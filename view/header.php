@@ -1,6 +1,7 @@
 <?php
   //start session management
   session_start();
+  ob_start();
 ?>
 <!DOCTYPE html>
 <html>
