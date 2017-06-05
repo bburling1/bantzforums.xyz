@@ -8,9 +8,10 @@
   $title = "Your Profile";
 
   include "header.php";
-  $user = is_user_logged_in();
+
 ?>
 <section class="hero is-primary is-medium">
+  <?php $user = is_user_logged_in(); ?>
   <div class="hero-body">
     <div class="container has-text-centered">
       <h1 class="title">
