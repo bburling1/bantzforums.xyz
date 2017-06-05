@@ -14,7 +14,7 @@
   function is_user_logged_in(){
     if(!isset($_SESSION['user'])){
       //redirect to homepage is user isn't logged in
-      header("location:../view/categories.php");
+      header("location:../view/home.php");
       //set error message
       $_SESSION['error'] = "Please log in to access this page";
     }
