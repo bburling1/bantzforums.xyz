@@ -5,9 +5,7 @@
 	require('../model/database.php');
 	//retrieve the functions
 	require('../model/functions_users.php');
-?>
-
-<?php
+	
 	//retrieve the registration details into the form
 	$username = $_POST['username'];
 	$email = $_POST['email'];
