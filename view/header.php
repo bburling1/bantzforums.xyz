@@ -6,7 +6,7 @@
 <html>
 <head>
   <!-- Add variable $title to title tags to insert new value of each page -->
-  <title> - League of Forums</title>
+  <title><?php echo $title ?> - League of Forums</title>
   <!-- link to Bulma framework -->
   <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.4.2/css/bulma.css">
   <!-- link to Fonts -->
