@@ -8,7 +8,6 @@
       header("location:../index.php");
       //set error message
       $_SESSION['error'] = "You do not have the required permissions to access this page";
-      exit();
     }
   }
 
@@ -18,7 +17,6 @@
       header("location:../view/categories.php");
       //set error message
       $_SESSION['error'] = "Please log in to access this page";
-      exit();
     }
   }
 
@@ -28,7 +26,6 @@
     if($_SESSION['user_id'] != $thread['user_id']){
       header("location:../view/categories.php");
       $_SESSION['error'] = "You don't have permission to access this page";
-      exit();
     }
   }
  ?>
