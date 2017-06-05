@@ -39,8 +39,6 @@
     <?php include "profile/overview.php"; ?>
   </div>
 </div>
-
-
 <?php
   include "footer.php"
 ?>

@@ -6,7 +6,6 @@
     <div class="columns">
       <div class="column is-1">
       </div>
-
       <div class="column is-3">
         <div class="card">
           <div class="card-content">
