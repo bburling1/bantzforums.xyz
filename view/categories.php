@@ -63,7 +63,7 @@ include "header.php"
             </a>
           </p>
           <p class="level-item control">
-            <a class="button is-danger">
+            <a class="button is-danger" href = "../controller/category_delete.php?cat_id=<?php echo $row['cat_id']; ?>" onclick="return confirm('Are you sure you want to delete this product?')">
               Delete Category
             </a>
           </p>

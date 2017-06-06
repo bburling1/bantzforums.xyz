@@ -10,6 +10,13 @@
               <i class="fa fa-github"></i>
             </a>
           </p>
+          <p>
+            <?php if($_SESSION['permissions'] == 'admin'){ ?>
+              <a class="icon" href="../view/admin.php">
+                Admin Panel
+              </a>
+            <?php } ?>
+          </p>
           <p><?php var_dump($_SESSION);?>
         </div>
       </div>

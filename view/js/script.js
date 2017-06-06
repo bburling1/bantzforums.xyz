@@ -1,3 +1,39 @@
+//admin User Search
+function showResult(str) {
+  if (str.length==0) {
+    document.getElementById("usersearch").innerHTML="";
+    document.getElementById("usersearch").style.border="0px";
+    return;
+  }
+
+  document.getElementById("usersearch").innerHTML = '';
+  if (window.XMLHttpRequest) {
+    // code for IE7+, Firefox, Chrome, Opera, Safari
+    xmlhttp=new XMLHttpRequest();
+  } else {  // code for IE6, IE5
+    xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+  }
+  xmlhttp.onreadystatechange=function() {
+    if (this.readyState==4 && this.status==200) {
+      var data = JSON.parse(this.responseText);
+
+      for(var i = 0; i < data.length; i++) {
+        console.log(data[i].username);
+        var user = document.createElement('div');
+        user.innerHTML = "<a href='../view/admin_usercontrol.php?user_id=" + data[i].user_id + "'>" + data[i].username + "</a>";
+        document.getElementById('usersearch').appendChild(user);
+
+      }
+
+      //document.getElementById("usersearch").innerHTML=this.responseText;
+      document.getElementById("usersearch").style.border="1px solid #A5ACB2";
+    }
+  }
+  xmlhttp.open("GET","../controller/usersearch.php?q="+str,true);
+  xmlhttp.send();
+}
+
+
 // Open the modal
 function showloginmodal() {
   var x = document.getElementById('loginmodal');
@@ -108,6 +144,7 @@ $( function() {
    });
  } );
 
+//Enable submit after file has been selected
  $(document).ready(
   function(){
     $('input:file').change(
@@ -117,4 +154,14 @@ $( function() {
         }
       }
       );
+  });
+
+//Login form using Jquery and 3rd party JS component
+  // wait for the DOM to be loaded
+  $(document).ready(function() {
+    // bind 'myForm' and provide a simple callback function
+    $('#loginform').ajaxForm(function(data) {
+        location.reload();
+
+    });
   });

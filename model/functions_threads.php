@@ -98,8 +98,14 @@
 		return $result;
 	}
 
-	function get_threads_by_user($user){
+	function delete_thread($thread_id)
+	{
 		global $conn;
-
+		$sql = "DELETE FROM thread WHERE thread_id = :thread_id";
+		$statement = $conn->prepare($sql);
+		$statement->bindValue(':thread_id', $thread_id);
+		$result = $statement->execute();
+		$statement->closeCursor();
+		return $result;
 	}
 ?>

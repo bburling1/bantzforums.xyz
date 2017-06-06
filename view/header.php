@@ -18,6 +18,7 @@
   <!-- link to jquery -->
   <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
   <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  <script src="http://malsup.github.com/jquery.form.js"></script>
   <!-- link to javascript -->
   <script type="text/javascript" src="js/script.js"></script>
 </head>
@@ -49,13 +50,11 @@
       <?php
         if(!isset($_SESSION['user'])){
       ?>
-      <a onClick="showloginmodal()" class="link is-info">
-        Login
-      </a>
+      <a onClick="showloginmodal()" href="#" class="link is-info">Login</a>
       <?php
         } else {
       ?>
-      <a href="../controller/logout_process.php" class="link is-info">
+      <a href="../controller/logout_process.php" href="#" class="link is-info">
         Logout
       </a>
       <?php } ?>

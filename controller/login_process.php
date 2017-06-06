@@ -42,13 +42,15 @@
 		} else {
 			$_SESSION['avatar'] = '';
 		}
-		header('location:../view/home.php');
+		print(json_encode(array("code" => 1, "message" => 'You have been successfully logged in!')));
+
 	}
 	else
 	{
 		//if login not successful, create an error message to display on the login page
 		$_SESSION['error'] = 'Incorrect username or password. Please try again.';
 		//redirect to login.php
-		header('location:../view/home.php');
+		//header('location:../view/home.php');
+		print(json_encode(array("code" => 0, "message" => 'Incorrect username or password. Please try again.')));
 	}
 ?>

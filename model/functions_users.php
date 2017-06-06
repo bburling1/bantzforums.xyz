@@ -174,4 +174,48 @@ function user_permissions($username)
    $statement->closeCursor();
    return $result;
  }
+
+ function admin_get_users($q){
+   global $conn;
+   $sql = "SELECT * FROM users WHERE username LIKE CONCAT('%', :q, '%')";
+   $statement = $conn->prepare($sql);
+   $statement->bindValue(':q', $q);
+   $statement->execute();
+   $result = $statement->fetchAll(PDO::FETCH_ASSOC);
+   $statement->closeCursor();
+   return $result;
+ }
+
+ function get_user_by_id($user_id){
+   global $conn;
+   $sql = "SELECT * FROM users WHERE user_id = :user_id";
+   $statement = $conn->prepare($sql);
+   $statement->bindValue(':user_id', $user_id);
+   $statement->execute();
+   $result = $statement->fetch();
+   $statement->closeCursor();
+   return $result;
+ }
+
+ function get_threads_by_user($user_id){
+   global $conn;
+   $sql = "SELECT * FROM thread WHERE user_id = :user_id";
+   $statement = $conn->prepare($sql);
+   $statement->bindValue(':user_id', $user_id);
+   $statement->execute();
+   $result = $statement->fetchAll();
+   $statement->closeCursor();
+   return $result;
+ }
+
+ function update_user_permissions($user_id, $permissions){
+   global $conn;
+   $sql = "UPDATE users SET acc_type = :acc_type WHERE user_id = :user_id";
+   $statement = $conn->prepare($sql);
+   $statement->bindValue(':user_id', $user_id);
+   $statement->bindValue(':acc_type', $permissions);
+   $statement->execute();
+   $statement->closeCursor();
+   return $result;
+ }
 ?>

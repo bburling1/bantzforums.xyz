@@ -59,7 +59,14 @@
 		return $result;
 	}
 
-	function delete_category(){
-		
+	function delete_category($cat_id)
+	{
+		global $conn;
+		$sql = "DELETE FROM categories WHERE cat_id = :cat_id";
+		$statement = $conn->prepare($sql);
+		$statement->bindValue(':cat_id', $cat_id);
+		$result = $statement->execute();
+		$statement->closeCursor();
+		return $result;
 	}
 ?>
