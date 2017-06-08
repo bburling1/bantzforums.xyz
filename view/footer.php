@@ -11,11 +11,16 @@
             </a>
           </p>
           <p>
-            <?php if($_SESSION['permissions'] == 'admin'){ ?>
-              <a class="icon" href="../view/admin.php">
-                Admin Panel
-              </a>
-            <?php } ?>
+            <?php if(isset($_SESSION['permissions'])){
+                    if($_SESSION['permissions'] == 'admin'){ ?>
+                      <a class="icon" href="../view/admin.php">
+                        Admin Panel
+                      </a>
+            <?php
+                    }
+                  }
+            ?>
+
           </p>
           <p><?php var_dump($_SESSION);?>
         </div>

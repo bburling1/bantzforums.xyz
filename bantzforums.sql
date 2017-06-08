@@ -3,9 +3,9 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 07, 2017 at 06:08 AM
--- Server version: 10.1.19-MariaDB
--- PHP Version: 7.0.13
+-- Generation Time: Jun 08, 2017 at 02:17 PM
+-- Server version: 10.1.9-MariaDB
+-- PHP Version: 5.6.15
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -99,7 +99,7 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`user_id`, `username`, `password`, `salt`, `email`, `riotid`, `acc_type`, `date_created`, `avatar`) VALUES
-(1, 'Rockeh', 'd03567c169db9e643d6cff331a0b36536846ad1b4347aab5e22a3b010ea7f866', '7ad09464ec042d8362adb83edf7ba004', 'admin@admin.com', '', 'admin', '2017-06-06 06:43:17', '06-06-2017-1496806832.jpg');
+(1, 'Rockeh', 'bc19a99506e343f7cfe531c68bbeb21b5d7e6fc1e9aa5fccff4b17c1c0d415a2', 'a062bcdf6f7074de0fc6111dc295e2b0', 'admin1@admin.com', '', 'admin', '2017-06-06 06:43:17', '06-06-2017-1496806832.jpg');
 
 -- --------------------------------------------------------
 
