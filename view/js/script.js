@@ -67,6 +67,9 @@ function confirm_password() {
   }
 }
 
+
+
+
 // AJAX Check Username and email
 function checkusername(){
   var str = document.getElementById('username').value;
