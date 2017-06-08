@@ -1,9 +1,9 @@
 <?php
 	//database connection details
-	$host = 'mysqldatabase.bantzforums.xyz';
-	$user = 'bburling1';
-	$password = '8r0ck8url1ng';
-	$database = 'bantzforums';
+	$host = 'localhost';
+	$user = 'root';
+	$password = '';
+	$database = 'lof';
 
 	//connect to database with a try/catch statement
 	//if the connection is not successful display the error message via database_error.php
