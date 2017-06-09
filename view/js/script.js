@@ -76,6 +76,11 @@ function checkusername(){
   var notification = document.getElementById("usernamenotification");
   if (str.length == 0){
     document.getElementById("username").className = "input";
+  } else if (str.length < 6) {
+    document.getElementById("username").className = "input is-danger";
+    notification.innerHTML = "Username must be longer than 5 letters";
+    notification.className = "help is-danger";
+    document.getElementById("registersubmit").disabled = true;
   } else {
     var xmlhttp = new XMLHttpRequest();
     var data = "username="+str;
@@ -106,8 +111,15 @@ function checkusername(){
 function checkemail(){
   var str = document.getElementById('email').value;
   var notification = document.getElementById("emailnotification");
+  var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
   if (str.length == 0){
     document.getElementById("email").className = "input";
+  } else if (re.test(str) == false){
+    console.log("Email invalid");
+    document.getElementById("email").className = "input is-danger";
+    notification.innerHTML = "Email is invalid";
+    notification.className = "help is-danger";
+    document.getElementById("registersubmit").disabled = true;
   } else {
     var xmlhttp = new XMLHttpRequest();
     var data = "email="+str;
@@ -168,3 +180,21 @@ $( function() {
 
     });
   });
+
+// Display reply to thread post after submit
+$(function () {
+  $('#replyform').on('submit', function (e){
+    e.preventDefault();
+    $.ajax({
+      type:'post',
+      url: '../controller/reply_add_process.php',
+      data: $('form').serialize(),
+      success: function (){
+        console.log('form was submitted');
+      }
+    }).done(function(response){
+      $("#response").html(response);
+      document.getElementById("response").style.display = 'block';
+    })
+  })
+})

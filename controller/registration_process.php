@@ -21,7 +21,7 @@
 		header("location:../view/registration_form.php");
 		exit();
 	}
-	if(strlen($username) < 6){
+	if(strlen($username) < 5){
 		$_SESSION['error'] = 'Username must be 6 characters or more.';
 		//redirect to the registration page to display the message
 		header("location:../view/registration_form.php");
